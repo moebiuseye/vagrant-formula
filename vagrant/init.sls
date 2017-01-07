@@ -10,4 +10,6 @@ vagrant-plugin-{{ plugin }}:
   cmd.run:
     - name: "vagrant plugin install '{{ plugin }}'"
     - unless: "vagrant plugin list | grep '{{ plugin }}'"
+    - env:
+      - HOME: /root/
 {% endfor %}
